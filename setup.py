@@ -48,5 +48,6 @@ setup(
     ext_modules=ext_modules,
     cmdclass=cmdclass,
     package_data={'pyfiberamp': ['spectroscopies/fiber_spectra/*.dat',
+                                 'spectroscopies/fiber_spectra/*.txt',
                                  'dynamic/fiber_simulation_pybindings.cp39-win_amd64.pyd']}
 )
