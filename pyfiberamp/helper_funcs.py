@@ -25,10 +25,10 @@ def load_two_column_file(file_name: str):
     return np.loadtxt(file_name, converters={0: to_float, 1: to_float})
 
 
-def to_float(x: str):
-    x = x.decode()
-    x = x.replace(',', '.')
-    return float(x)
+def to_float(x):
+    if isinstance(x, bytes):
+        x = x.decode()
+    return float(x.replace(',', '.'))
 
 
 def wl_bw_to_freq_bw(wl_bw: float, center_wl: float):
